@@ -216,4 +216,76 @@ const BloodSheetData = {
 game.settings.set("splatter", "BloodSheetData", bloodSheetData);
 ```
 
+# DAGGERHEART
 
+1. Module settings:
+
+| Field | Value |
+|:---|:---|
+| Creature Type | ancestry.name |
+| Custom Creature Type | attribution.source |
+| Current HP | resources.hitPoints.value |
+| Max HP | resources.hitPoints.max |
+| Wounds System | TRUE / CHECKED`|
+
+> NOTE: Since adversaries dont generally use ancestries, I set the custom Creature Type to the attribution. (Top right 3 dots in character sheet -> Configure attribution -> SOURCE) this is a big ol' hack and if someone knows any better way of solving this, be my guest.
+
+2. All ancestries from Daggerheart CORE as well as THE VOID - Mixed ancestries obviously would need to be configured manually.
+If you want companions to have splats aswell, use the source attribution "hack" alike with adversaries
+
+```js
+const bloodSheetData = {
+// Celestial/Energy-based
+  Aetheris: "#c0c0c0d8", // Silvery-White/Radiant
+  Astran: "#1e0b3dd8",   // Deep Violet/Cosmic dust
+  Crystalline: "#606060d8", // Grey/Clear mineral-like
+  Emberkin: "#ff6600d8", // Glowing Orange/Fire
+  Glimmerkin: "#ffff00d8", // Yellow/Sparkling Joy
+  Infernis: "#cc0000d8", // Dark Red/Heat/Brimstone
+  Oneiroi: "#9370dbd8", // Medium Purple/Dream-like
+  Skykin: "#87ceebc0",   // Light Blue/Airy
+  Sylph: "#b0e0e6c0",    // Powder Blue/Near-transparent
+  Umbral: "#000000d8",   // Black/Shadow
+  Voldur: "#add8e6d8",   // Pale Blue/Frost
+
+  // Humanoid/Mammalian
+  Carchari: "#a51414d8", // Standard Red
+  Centaur: "#a51414d8", // Standard Red.. you know the drill..
+  Drakona: "#a51414d8",
+  Dwarf: "#a51414d8",
+  Elf: "#a51414d8",
+  Giant: "#a51414d8",
+  Gnome: "#a51414d8",
+  Halfling: "#a51414d8",
+  Human: "#a51414d8",
+  Kapibara: "#a51414d8",
+  Katari: "#a51414d8",
+  Kitsune: "#a51414d8",
+  Rattan: "#a51414d8",
+  Simiah: "#a51414d8",
+
+  // Aquatic/Reptilian/Amphibian/Insectoid "Special"
+  Arachne: "#000000d8",  // Black/Hemolymph (Insectoid/Spider)
+  Drow: "#22003dd8",   // Very Dark Purple/Venous
+  Faerie: "#9acd32d8",   // Greenish-Yellow/Plant sap-like
+  Firbolg: "#694a34d8", // Brownish-Red/Earthy
+  Grotesque: "#694a34d8", // Brownish Red
+  Loxodon: "#4d2919d8", // Dark Brown/Thick
+  Naga: "#336600d8",     // Dark Green/Serpentine
+  Orc: "#708238d8",     // Olive Green/Iron-rich
+  Ribbet: "#006400d8",   // Dark Green/Amphibian
+  Vespine: "#9acd32d8",  // Greenish-Yellow/Hemolymph (Wasp/Bee)
+
+  // Other/Construct/Unique
+  Clank: "#808080c0",     // Grey/Oils or hydraulic fluid (translucent)
+  Fungril: "#ff00ffd8",   // Magenta/Spores/Mycelial fluid
+  Galapa: "#4b5320d8",    // Khaki/Shell-based/Thick
+  Gargoyle: "#484848c0",  // Dark Grey/Stone particles
+  Gelatinoid: "#00bfff99",// Deep Sky Blue/Translucent Ooze
+  Sylvanwood: "#228b22d8",// Forest Green/Sap/Chlorophyll
+  Tidekin: "#0000ff99",   // Blue/Sea water (somewhat translucent)
+
+};
+
+game.settings.set("splatter", "BloodSheetData", bloodSheetData);
+```
