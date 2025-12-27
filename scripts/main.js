@@ -107,13 +107,6 @@ Hooks.once("init", function () {
       maxHp: "track.physical.max",
       useWounds: true,
     },
-    lancer: {
-      creatureType: "",
-      creatureTypeCustom: "",
-      currentHp: "hp.value",
-      maxHp: "hp.max",
-      useWounds: false,
-    },
   };
 
   /**************************
@@ -371,7 +364,7 @@ Hooks.once("init", function () {
     scope: "world",
     config: true,
     type: String,
-    default: dataPaths[game.system.id]?.currentHp ?? "attributes.hp.value",
+    default: dataPaths[game.system.id]?.currentHp ?? "resources.hitPoints.value",
   });
 
   game.settings.register("splatter", "maxHp", {
@@ -380,7 +373,7 @@ Hooks.once("init", function () {
     scope: "world",
     config: true,
     type: String,
-    default: dataPaths[game.system.id]?.maxHp ?? "attributes.hp.max",
+    default: dataPaths[game.system.id]?.maxHp ?? "resources.hitPoints.max",
   });
 
   game.settings.register("splatter", "useWounds", {

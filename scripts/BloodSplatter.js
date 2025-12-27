@@ -410,31 +410,35 @@ export class BloodSplatter {
   }
   static getImpactScaleStandard(actor, updates, diff) {
     const hpMax = BloodSplatter.getHpMax(actor);
-    const oldHpVal = diff.oldHpVal; //BloodSplatter.getHpVal(actor.data);
+    const oldHpVal = diff.oldHpVal;
     const hpVal = BloodSplatter.getHpVal(updates);
-    const impactScale = (oldHpVal - hpVal) / hpMax + 0.7;
+
+    const impactScale = (hpVal - oldHpVal) / hpMax + 0.7;
+
     if (hpVal != undefined &&
-      hpVal <= oldHpVal &&
+      hpVal > oldHpVal &&
       (100 * hpVal) / hpMax <=
       game.settings.get("splatter", "bloodsplatterThreshold")) {
       return impactScale;
-    }else{
-      return false;
-    }
+      } else {
+        return false;
+      }
   }
   static getImpactScaleWounds(actor, updates, diff) {
     const hpMax = BloodSplatter.getHpMax(actor);
-    const oldHpVal = diff.oldHpVal; //BloodSplatter.getHpVal(actor.data);
+    const oldHpVal = diff.oldHpVal;
     const hpVal = BloodSplatter.getHpVal(updates);
-    const impactScale = (hpVal - oldHpVal) / hpMax + 0.7;
+
+    const impactScale = (oldHpVal - hpVal) / hpMax + 0.7;
+
     if (hpVal != undefined &&
-      hpVal >= oldHpVal &&
+      hpVal < oldHpVal &&
       (100 * (hpMax - hpVal)) / hpMax <=
       game.settings.get("splatter", "bloodsplatterThreshold")) {
       return impactScale;
-    }else{
-      return false;
-    }
+      } else {
+        return false;
+      }
   }
   static executeSplat(token, impactScale) {
     const delay = game.settings.get("splatter", "bloodsplatterDelay");
