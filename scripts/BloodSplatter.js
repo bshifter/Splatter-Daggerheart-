@@ -1,4 +1,5 @@
 import {Socket} from "./lib/socket.js";
+import { MODULE_ID } from "./constants.js";
 
 export class BloodSplatter {
   constructor() {
@@ -7,23 +8,20 @@ export class BloodSplatter {
     this.Update();
     canvas.primary.BloodSplatter = this;
   }
+  
+  static getRandomBloodPath(max = 26) {
+    const index = Math.floor(Math.random() * max);
+    return `modules/${MODULE_ID}/bloodsplats/blood${index}.svg`;
+  }
 
   Splat(scale, color, alpha) {
     this.Cleanup();
     let scaleRandom = 0.8 + Math.random() * 0.4;
     let cachedTex =
-      PIXI.utils.TextureCache[
-        `modules/splatter-daggerheart/bloodsplats/blood${Math.floor(
-          Math.random() * 26
-        )}.svg`
-      ];
+      PIXI.utils.TextureCache[BloodSplatter.getRandomBloodPath()];
     let sprite = cachedTex
       ? PIXI.Sprite.from(cachedTex)
-      : PIXI.Sprite.from(
-          `modules/splatter-daggerheart/bloodsplats/blood${Math.floor(
-            Math.random() * 26
-          )}.svg`
-        );
+      : PIXI.Sprite.from(BloodSplatter.getRandomBloodPath());
     sprite.anchor.set(0.5, 0.5);
     sprite.scale.set(
       scale * this.scaleMulti * scaleRandom,
@@ -121,7 +119,7 @@ export class BloodSplatter {
     const euler = new THREE.Euler().setFromRotationMatrix(rotation);
     const geometry =  new DecalGeometry( intersect.object, intersect.point, euler, new THREE.Vector3(scale,scale,scale) );
     for(let i = 0; i < count; i++){
-      const sprite = `modules/splatter-daggerheart/bloodsplats/blood${Math.floor(Math.random() * 26)}.svg`;
+      const sprite = BloodSplatter.getRandomBloodPath();
       let material;
       if(this.decalMaterials[`${sprite}|${color}`]){
         material = this.decalMaterials[`${sprite}|${color}`];

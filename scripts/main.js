@@ -1,7 +1,6 @@
 import { BloodSplatter } from "./BloodSplatter.js";
 import { Socket } from "./lib/socket.js";
-
-export const MODULE_ID = "splatter";
+import { MODULE_ID } from "./constants.js";
 
 Hooks.once("init", function () {
   /**************************
