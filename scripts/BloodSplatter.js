@@ -13,14 +13,14 @@ export class BloodSplatter {
     let scaleRandom = 0.8 + Math.random() * 0.4;
     let cachedTex =
       PIXI.utils.TextureCache[
-        `modules/splatter/bloodsplats/blood${Math.floor(
+        `modules/splatter-daggerheart/bloodsplats/blood${Math.floor(
           Math.random() * 26
         )}.svg`
       ];
     let sprite = cachedTex
       ? PIXI.Sprite.from(cachedTex)
       : PIXI.Sprite.from(
-          `modules/splatter/bloodsplats/blood${Math.floor(
+          `modules/splatter-daggerheart/bloodsplats/blood${Math.floor(
             Math.random() * 26
           )}.svg`
         );
@@ -121,7 +121,7 @@ export class BloodSplatter {
     const euler = new THREE.Euler().setFromRotationMatrix(rotation);
     const geometry =  new DecalGeometry( intersect.object, intersect.point, euler, new THREE.Vector3(scale,scale,scale) );
     for(let i = 0; i < count; i++){
-      const sprite = `modules/splatter/bloodsplats/blood${Math.floor(Math.random() * 26)}.svg`;
+      const sprite = `modules/splatter-daggerheart/bloodsplats/blood${Math.floor(Math.random() * 26)}.svg`;
       let material;
       if(this.decalMaterials[`${sprite}|${color}`]){
         material = this.decalMaterials[`${sprite}|${color}`];
