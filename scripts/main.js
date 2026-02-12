@@ -135,7 +135,7 @@ Hooks.once("init", function () {
     game.isAAPlaying = false;
   });
 
-  game.settings.register("splatter", "enableBloodsplatter", {
+  game.settings.register(MODULE_ID, "enableBloodsplatter", {
     name: game.i18n.localize("splatter.settings.enableBloodsplatter.text"),
     hint: game.i18n.localize("splatter.settings.enableBloodsplatter.hint"),
     scope: "client",
@@ -149,7 +149,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "bloodColor", {
+  game.settings.register(MODULE_ID, "bloodColor", {
     name: game.i18n.localize("splatter.settings.bloodColor.text"),
     hint: game.i18n.localize("splatter.settings.bloodColor.hint"),
     scope: "world",
@@ -163,7 +163,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "violence", {
+  game.settings.register(MODULE_ID, "violence", {
     name: game.i18n.localize("splatter.settings.violence.text"),
     hint: game.i18n.localize("splatter.settings.violence.hint"),
     scope: "world",
@@ -182,7 +182,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "cleanup", {
+  game.settings.register(MODULE_ID, "cleanup", {
     name: game.i18n.localize("splatter.settings.cleanup.text"),
     hint: game.i18n.localize("splatter.settings.cleanup.hint"),
     scope: "client",
@@ -201,7 +201,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "wallsBlockBlood", {
+  game.settings.register(MODULE_ID, "wallsBlockBlood", {
     name: game.i18n.localize("splatter.settings.wallsBlockBlood.text"),
     hint: game.i18n.localize("splatter.settings.wallsBlockBlood.hint"),
     scope: "world",
@@ -215,7 +215,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "enableBloodTrail", {
+  game.settings.register(MODULE_ID, "enableBloodTrail", {
     name: game.i18n.localize("splatter.settings.enableBloodTrail.text"),
     hint: game.i18n.localize("splatter.settings.enableBloodTrail.hint"),
     scope: "world",
@@ -229,7 +229,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "useBloodsheet", {
+  game.settings.register(MODULE_ID, "useBloodsheet", {
     name: game.i18n.localize("splatter.settings.useBloodsheet.text"),
     hint: game.i18n.localize("splatter.settings.useBloodsheet.hint"),
     scope: "world",
@@ -243,7 +243,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "bloodsplatterThreshold", {
+  game.settings.register(MODULE_ID, "bloodsplatterThreshold", {
     name: game.i18n.localize("splatter.settings.bloodsplatterThreshold.text"),
     hint: game.i18n.localize("splatter.settings.bloodsplatterThreshold.hint"),
     scope: "world",
@@ -262,7 +262,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "bloodsplatterScale", {
+  game.settings.register(MODULE_ID, "bloodsplatterScale", {
     name: game.i18n.localize("splatter.settings.bloodsplatterScale.text"),
     hint: game.i18n.localize("splatter.settings.bloodsplatterScale.hint"),
     scope: "world",
@@ -281,7 +281,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "bloodsplatterDelay", {
+  game.settings.register(MODULE_ID, "bloodsplatterDelay", {
     name: game.i18n.localize("splatter.settings.bloodsplatterDelay.text"),
     hint: game.i18n.localize("splatter.settings.bloodsplatterDelay.hint"),
     scope: "world",
@@ -295,7 +295,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "onlyInCombat", {
+  game.settings.register(MODULE_ID, "onlyInCombat", {
     name: game.i18n.localize("splatter.settings.onlyInCombat.text"),
     hint: game.i18n.localize("splatter.settings.onlyInCombat.hint"),
     scope: "world",
@@ -310,7 +310,7 @@ Hooks.once("init", function () {
   });
 
 
-  game.settings.register("splatter", "creatureType", {
+  game.settings.register(MODULE_ID, "creatureType", {
     name: game.i18n.localize("splatter.settings.creatureType.text"),
     hint: game.i18n.localize("splatter.settings.creatureType.hint"),
     scope: "world",
@@ -319,7 +319,7 @@ Hooks.once("init", function () {
     default: dataPaths[game.system.id]?.creatureType ?? "",
   });
 
-  game.settings.register("splatter", "creatureTypeCustom", {
+  game.settings.register(MODULE_ID, "creatureTypeCustom", {
     name: game.i18n.localize("splatter.settings.creatureTypeCustom.text"),
     hint: game.i18n.localize("splatter.settings.creatureTypeCustom.hint"),
     scope: "world",
@@ -328,7 +328,7 @@ Hooks.once("init", function () {
     default: dataPaths[game.system.id]?.creatureTypeCustom ?? "",
   });
 
-  game.settings.register("splatter", "BloodSheetData", {
+  game.settings.register(MODULE_ID, "BloodSheetData", {
     name: "",
     hint: "",
     scope: "world",
@@ -357,7 +357,7 @@ Hooks.once("init", function () {
     },
   });
 
-  game.settings.register("splatter", "currentHp", {
+  game.settings.register(MODULE_ID, "currentHp", {
     name: game.i18n.localize("splatter.settings.currentHp.text"),
     hint: game.i18n.localize("splatter.settings.currentHp.hint"),
     scope: "world",
@@ -366,7 +366,7 @@ Hooks.once("init", function () {
     default: dataPaths[game.system.id]?.currentHp ?? "resources.hitPoints.value",
   });
 
-  game.settings.register("splatter", "maxHp", {
+  game.settings.register(MODULE_ID, "maxHp", {
     name: game.i18n.localize("splatter.settings.maxHp.text"),
     hint: game.i18n.localize("splatter.settings.maxHp.hint"),
     scope: "world",
@@ -375,7 +375,7 @@ Hooks.once("init", function () {
     default: dataPaths[game.system.id]?.maxHp ?? "resources.hitPoints.max",
   });
 
-  game.settings.register("splatter", "useWounds", {
+  game.settings.register(MODULE_ID, "useWounds", {
     name: game.i18n.localize("splatter.settings.useWounds.text"),
     hint: game.i18n.localize("splatter.settings.useWounds.hint"),
     scope: "world",
@@ -417,7 +417,7 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
     icon: "fas fa-tint",
     button: true,
     visible:
-      game.user.isGM && game.settings.get("splatter", "enableBloodsplatter"),
+      game.user.isGM && game.settings.get(MODULE_ID, "enableBloodsplatter"),
     onChange: () => {
       if (!canvas.tokens.controlled[0]) {
         ui.notifications.warn(
@@ -433,7 +433,7 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
     title: game.i18n.localize("splatter.controls.clearBlood.name"),
     icon: "fas fa-tint-slash",
     button: true,
-    visible: game.settings.get("splatter", "enableBloodsplatter"),
+    visible: game.settings.get(MODULE_ID, "enableBloodsplatter"),
     onChange: () => {
       BloodSplatter.clearAll();
     },
@@ -446,8 +446,8 @@ Hooks.on("preUpdateActor", function (actor, updates, diff) {
 
 Hooks.on("updateActor", function (actor, updates, diff) {
   if (
-    !game.settings.get("splatter", "enableBloodsplatter") ||
-    (game.settings.get("splatter", "onlyInCombat") && !game.combat?.started)
+    !game.settings.get(MODULE_ID, "enableBloodsplatter") ||
+    (game.settings.get(MODULE_ID, "onlyInCombat") && !game.combat?.started)
   )
     return;
   let token = actor.parent
